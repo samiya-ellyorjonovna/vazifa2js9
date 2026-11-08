@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>jhhj</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .sarlavha-box {
+            background-color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        #jami {
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .kategoriya-box {
+            margin-bottom: 25px;
+        }
+
+        .kat-btn {
+            padding: 10px 18px;
+            font-size: 15px;
+            cursor: pointer;
+            background-color: #ffffff;
+            color: #333333;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            transition: 0.2s;
+        }
+
+        .kat-btn:hover {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .mahsulotlar-konteyner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .div1 {
+            width: 200px;
+            background-color: #ffffff;
+            border: 1px solid #e1e8ed;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+
+        .div1:hover {
+            transform: translateY(-5px);
+        }
+
+        .div1 img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .div1 h3 {
+            margin: 12px 0 5px 0;
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .div1 p {
+            margin: 0 0 12px 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .div1 button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .div1 button:hover {
+            background-color: #0056b3;
+        }
+
+        .yashirin {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sarlavha-box">
+    <h2 id="jami">Umumiy summa: 0 so'm</h2>
+    <button onclick="clearSavat()">Clear</button>
+</div>
+
+    <div class="kategoriya-box">
+        <button class="kat-btn" onclick="korsat('meva')">Mevalar va sneyyklar</button>
+        <button class="kat-btn" onclick="korsat('don')">Don maxsulotlari</button>
+        <button class="kat-btn" onclick="korsat('gosht')">Gosht mahsulotlari</button>
+        <button class="kat-btn" onclick="korsat('sut')">Sut mahsulotlari</button>
+        <button class="kat-btn" onclick="korsat('gadjet')">Gadjetlar</button>
+    </div>
+
+    <div id="meva" class="mahsulotlar-konteyner">
+        <div class="div1">
+            <img src="https://dostavo4ka.uz/upload-file/2021/05/05/4921/750x750-7bffb8d4-039d-4d80-bf98-5feb96961f95.jpg" alt="Olma">
+            <h3>Olma</h3>
+            <p>Narxi: 45 000so'm</p>
+            <button onclick="zakazQilish('Olma', 45000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500" alt="Banan">
+            <h3>Banan</h3>
+            <p>Narxi: 35 000 so'm</p>
+            <button onclick="zakazQilish('Banan', 32000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-b/7143064967.jpg">
+            <h3>Shokolad</h3>
+            <p>Narxi: 29 000 so'm</p>
+            <button onclick="zakazQilish('Shokolad', 29000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROnwz-HMV8ODxdT0Oh-XmVBuu-QUL9-sgK-tTM8MTVQO_OrjwmC1gpK7Ka&s=10">
+            <h3>Chips</h3>
+            <p>Narxi: 23 000 so'm</p>
+            <button onclick="zakazQilish('Chips', 23000)">Zakaz qilish</button>
+        </div>
+    </div>
+
+    <div id="don" class="mahsulotlar-konteyner yashirin">
+        <div class="div1">
+            <img src="https://zira.uz/wp-content/uploads/2018/03/int-fakti-4.jpg">
+            <h3>Afsyanka</h3>
+            <p>Narxi: 42 000 so'm</p>
+            <button onclick="zakazQilish('Afsyanka', 42000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://basket-14.wbbasket.ru/vol2146/part214676/214676929/images/big/1.webp">
+            <h3>Guruch</h3>
+            <p>Narxi: 54 000 so'm</p>
+            <button onclick="zakazQilish('Guruch', 54000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlTscjzrB8Duf1CD51jzUyaXzXMOmB5yVVNZiw6Z-MqgD3i4380px_LFo&s=10">
+            <h3>Un</h3>
+            <p>Narxi: 85 000 so'm</p>
+            <button onclick="zakazQilish('Un', 85000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKA_9tMuin1y9RJUjL9erWSxHot4Le4wW7UR7QPx0ZbQ&s">
+            <h3>Grechka</h3>
+            <p>Narxi: 55 000 so'm</p>
+            <button onclick="zakazQilish('Grechka', 55000)">Zakaz qilish</button>
+        </div>
+    </div>
+
+    <div id="gosht" class="mahsulotlar-konteyner yashirin">
+        <div class="div1">
+            <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500" alt="Mol go'shti">
+            <h3>Mol go'shti</h3>
+            <p>Narxi: 115 555 so'm</p>
+            <button onclick="zakazQilish('Mol go\'shti', 115555)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=500" alt="Tovuq go'shti">
+            <h3>Tovuq go'shti</h3>
+            <p>Narxi: 90 000 so'm</p>
+            <button onclick="zakazQilish('Tovuq go\'shti', 90000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-0/7750450548.jpg">
+            <h3>Sosiska</h3>
+            <p>Narxi: 79 999 so'm</p>
+            <button onclick="zakazQilish('Sosiska', 79999)">Zakaz qilish</button>
+        </div>
+    </div>
+
+    <div id="sut" class="mahsulotlar-konteyner yashirin">
+        <div class="div1">
+            <img src="https://cdn.bigmart.uz/file/hub/file/2026/10/23/3L60PjpqrfEazbf3fRCWYKDTCmu.jpg">
+            <h3>Sut</h3>
+            <p>Narxi: 28 000 so'm</p>
+            <button onclick="zakazQilish('Sut', 28000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-1/c600/7087223593.jpg">
+            <h3>Smetana</h3>
+            <p>Narxi: 16 000 so'm</p>
+            <button onclick="zakazQilish('Smetana', 16000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://upakovkatorg.ru/image/cache/catalog/kategorii/upakovka_dly/dlja-tvoroga/u4945/upakovka-tvorog3-500x500.jpg">
+            <h3>Tvorog</h3>
+            <p>Narxi: 18 000 so'm</p>
+            <button onclick="zakazQilish('Tvorog', 18000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://cdn.api.lenta.com/resample/webp/900x900/photo/294662/5049b1fd-0320-471f-91f7-ee8335a058c7.png">
+            <h3>reyajinka</h3>
+            <p>Narxi: 30 000 so'm</p>
+            <button onclick="zakazQilish('Marojni', 30000)">Zakaz qilish</button>
+        </div>
+    </div>
+
+    <div id="gadjet" class="mahsulotlar-konteyner yashirin">
+        <div class="div1">
+            <img src="https://www.apple.com/newsroom/images/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/article/Apple-iPhone-18-Pro-2up-260909_inline.jpg.large.jpg">
+            <h3>Telefon</h3>
+            <p>Narxi: 35 00 000 so'm</p>
+            <button onclick="zakazQilish('Telefon', 35000000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500" alt="Noutbuk">
+            <h3>Noutbuk</h3>
+            <p>Narxi: 8 000 000 so'm</p>
+            <button onclick="zakazQilish('Noutbuk', 8000000)">Zakaz qilish</button>
+        </div>
+
+        <div class="div1">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Soat">
+            <h3>Soat</h3>
+            <p>Narxi: 600 000 so'm</p>
+            <button onclick="zakazQilish('Soat', 600000)">Zakaz qilish</button>
+        </div>
+    </div>
+    <footer>
+        Bizda barchasi oson!!!
+        Barccha ishingizni su yerda bitirib uyda issiqina o'tiring🫆🫰🏼.
+    </footer>
+
+    <script src="./vazifa2.js"></script>
+</body>
+</html>
